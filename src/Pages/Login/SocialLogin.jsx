@@ -4,10 +4,9 @@ import useAuth from "../../hooks/useAuth";
 const SocialLogin = () => {
   const { googleLogin, githubLogin, twitterLogin, facebookLogin } = useAuth();
 
-  // navigation systems
   const navigate = useNavigate();
-    const location = useLocation();
-  
+  const location = useLocation();
+
   const from = location?.state || "/";
 
   const handleSocialLogin = (socialProvider) => {
@@ -19,8 +18,8 @@ const SocialLogin = () => {
   };
   return (
     <>
-      <div className="divider">continue with</div>
-      <div className="flex justify-around">
+      <div className="divider">Continue with</div>
+      <div className="flex justify-between flex-wrap gap-2">
         <button
           onClick={() => handleSocialLogin(googleLogin)}
           className="btn btn-primary btn-sm btn-outline"
